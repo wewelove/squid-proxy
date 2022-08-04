@@ -1,0 +1,19 @@
+{
+    "name": "squid-proxy",
+    "version": "0.1.0",
+    "description": "🐙 A Node.js Squid proxy tunneled with ngrok and bundled using Vercel pkg.",
+    "main": "index.js",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "format": "eslint --fix ."
+    },
+    "author": "Rakox <rakox@zakary.fr>",
+    "dependencies": {},
+    "devDependencies": {
+        "dotenv": "^16.0.1",
+        "eslint": "^8.20.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0"
+    }
+}
