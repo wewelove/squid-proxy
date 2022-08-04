@@ -5,6 +5,7 @@ import start from './proxy.js';
 const ERROR_CODES = {
   INVALID_USERNAME: 'The username environment variable is wether invalid or not set',
   INVALID_PROXY: 'The proxy connection was not successful',
+  PROXY_CONFLICT: 'The proxy configuration conflicts with an other service, most likely the host ip adress and the proxy ip address mismatch',
   SCHEDULER_ERROR: 'The scheduler was not able to start, this is most likely due to a server error',
 };
 
