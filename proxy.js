@@ -1,3 +1,4 @@
+import ora from 'ora';
 import { Server } from 'proxy-chain';
 import connect from './ngrok.js';
 
@@ -6,11 +7,13 @@ const server = new Server({ port: process.env.PROXY_PORT });
 
 // Listen for incoming requests and proxy them
 server.listen((err) => {
+  // Inform the user that the proxy server is running
+  const spinner = ora('Starting Squid proxy server').start();
   if (err) {
-    console.error('[PROXY] An error occured while starting the proxy server:');
+    spinner.fail('An error occured while starting the proxy server');
     console.error(err);
   } else {
-    console.log(`[PROXY] 🚀 Proxy ready at ${server.server.address().address}:${server.server.address().port}`);
+    spinner.succeed(`🚀 Proxy ready at ${server.server.address().address}:${server.server.address().port}`);
   }
 });
 
@@ -18,5 +21,5 @@ server.listen((err) => {
  * Connect to a ngrok tunnel and return the public url
  * @returns {Promise<string>} The public proxy url
  */
-const start = connect({ port: process.env.PROXY_PORT, protocol: 'tcp', service: 'proxy' });
+const start = connect({ port: process.env.PROXY_PORT, protocol: 'tcp' });
 export default start;

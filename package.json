@@ -12,6 +12,7 @@
     "dependencies": {
         "ngrok": "^4.3.1",
         "node-fetch": "^3.2.10",
+        "ora": "^6.1.2",
         "proxy-chain": "^2.0.6"
     },
     "devDependencies": {

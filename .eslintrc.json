@@ -11,6 +11,7 @@
   },
   "rules": {
     "import/extensions": "off",
+    "consistent-return": "off",
     "no-console": "off"
   }
 }
