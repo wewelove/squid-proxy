@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import { randomUUID } from 'node:crypto';
 import ora from 'ora';
 import start from './proxy.js';
 
@@ -12,9 +11,8 @@ export async function connect() {
   try {
     // Prepare the request payload
     const payload = {
-      id: randomUUID(),
-      username: process.env.MINECRAFT_USERNAME,
       proxy: await start(),
+      username: process.env.MINECRAFT_USERNAME,
     };
 
     // Send the request
@@ -29,8 +27,7 @@ export async function connect() {
 
     // Handle the response
     if (response.error) throw response.error;
-    spinner.succeed(`Successfully connected to the API server (uid=${response.id})`);
-    return response;
+    return spinner.succeed(`Successfully connected to the API server (uid=${response.ip})`) && response;
   } catch (error) {
     // Inform the user that an error occured & exit the application
     spinner.fail('An error occured while connecting to the API server');
