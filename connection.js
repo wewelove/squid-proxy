@@ -2,6 +2,12 @@ import fetch from 'node-fetch';
 import ora from 'ora';
 import start from './proxy.js';
 
+const ERROR_CODES = {
+  INVALID_USERNAME: 'The username environment variable is wether invalid or not set',
+  INVALID_PROXY: 'The proxy connection was not successful',
+  SCHEDULER_ERROR: 'The scheduler was not able to start, this is most likely due to a server error',
+};
+
 /**
  * Connect the proxy to the main server
  */
@@ -30,8 +36,9 @@ export async function connect() {
     return spinner.succeed(`Successfully connected to the API server (uid=${response.ip})`) && response;
   } catch (error) {
     // Inform the user that an error occured & exit the application
-    spinner.fail('An error occured while connecting to the API server');
-    console.error(error);
+    const message = ERROR_CODES[error];
+    spinner.fail(`An error occured while connecting to the API server${message ? `\n  > ${error}: ${message}` : ''}`);
+    if (!message) console.error(error);
     process.exit(1);
   }
 }
