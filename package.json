@@ -10,7 +10,8 @@
     },
     "author": "Rakox <rakox@zakary.fr>",
     "dependencies": {
-        "ngrok": "^4.3.1"
+        "ngrok": "^4.3.1",
+        "proxy-chain": "^2.0.6"
     },
     "devDependencies": {
         "dotenv": "^16.0.1",

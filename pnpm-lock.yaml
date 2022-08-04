@@ -6,9 +6,11 @@ specifiers:
   eslint-config-airbnb-base: ^15.0.0
   eslint-plugin-import: ^2.26.0
   ngrok: ^4.3.1
+  proxy-chain: ^2.0.6
 
 dependencies:
   ngrok: 4.3.1
+  proxy-chain: 2.0.6
 
 devDependencies:
   dotenv: 16.0.1
@@ -1300,6 +1302,13 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /proxy-chain/2.0.6:
+    resolution: {integrity: sha512-dtjU7HHSn5LM3TZzj7phHr3NjSqjJrUV9EmsOKTtsv6ezlpPv26rbCrP5t1LIZLvEyApAXRgMuG6rVuH5c/3bA==}
+    engines: {node: '>=14'}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
+
   /pump/3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
     dependencies:
@@ -1471,6 +1480,10 @@ packages:
       minimist: 1.2.6
       strip-bom: 3.0.0
     dev: true
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: false
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
