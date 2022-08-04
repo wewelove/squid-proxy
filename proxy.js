@@ -13,7 +13,7 @@ server.listen((err) => {
     spinner.fail('An error occured while starting the proxy server');
     console.error(err);
   } else {
-    spinner.succeed(`🚀 Proxy ready at ${server.server.address().address}:${server.server.address().port}`);
+    spinner.succeed(`Proxy ready at ${server.server.address().address}:${server.server.address().port}`);
   }
 });
 

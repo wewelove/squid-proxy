@@ -29,6 +29,7 @@ export async function connect() {
 
     // Handle the response
     if (response.error) throw response.error;
+    spinner.succeed(`Successfully connected to the API server (uid=${response.id})`);
     return response;
   } catch (error) {
     // Inform the user that an error occured & exit the application
