@@ -9,7 +9,9 @@
         "format": "eslint --fix ."
     },
     "author": "Rakox <rakox@zakary.fr>",
-    "dependencies": {},
+    "dependencies": {
+        "ngrok": "^4.3.1"
+    },
     "devDependencies": {
         "dotenv": "^16.0.1",
         "eslint": "^8.20.0",
